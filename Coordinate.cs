@@ -8,7 +8,7 @@ namespace LinearRegression
 {
     internal class Coordinate
     {
-        public static List<Coordinate> coordinates = new List<Coordinate>();
+        public static List<Coordinate> points = new List<Coordinate>();
         public string Name { get; set; }
         public int X { get; set; }
         public int Y { get; set; }
@@ -37,7 +37,7 @@ namespace LinearRegression
                 string name = people[i].Name;
                 
                 Coordinate plot = new Coordinate(name, x, y);
-                coordinates.Add(plot);
+                points.Add(plot);
             }
         }
     }

@@ -20,7 +20,7 @@ namespace LinearRegression
                 Console.WriteLine(person.Height);
                 Console.WriteLine(person.Weight);
             }
-            foreach (var plots in Coordinate.coordinates)
+            foreach (var plots in Coordinate.points)
             {
                 Console.WriteLine(plots.X);
                 Console.WriteLine(plots.Y);
