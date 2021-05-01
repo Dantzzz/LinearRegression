@@ -7,12 +7,6 @@ namespace LinearRegression
 {
     public class Regression
     {
-        public static List<Person> people = new List<Person>();
-        public static void Run()
-        {
-            Person.Populate();
-            Coordinates.BuildCoordinates(people);
-        }
 
     }
 }

@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace LinearRegression
 {
-    class Person
+    internal class Person
     {
+        public static List<Person> people = new List<Person>();
         public string Name { get; set; }
         public int Weight { get; set; }
         public int Height { get; set; }
@@ -18,7 +19,7 @@ namespace LinearRegression
             Weight = weight;
             Height = height;
         }
-        internal static void Populate()
+        internal static void PopulateList()
         {
             Person andre = new Person("Andre", 165, 66);
             Person aaron = new Person("Aaron", 185, 71);

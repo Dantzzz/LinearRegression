@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LinearRegression
 {
-    public class Coordinate
+    internal class Coordinate
     {
         public static List<Coordinate> coordinates = new List<Coordinate>();
         public string Name { get; set; }
@@ -25,7 +25,7 @@ namespace LinearRegression
         }
         static int GetY(Person person)
         {
-            int y = person.Height;
+            int y = person.Weight;
             return y;
         }
         public static void BuildCoordinates(List<Person> people)
