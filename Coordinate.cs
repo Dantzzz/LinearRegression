@@ -28,7 +28,7 @@ namespace LinearRegression
             int y = person.Weight;
             return y;
         }
-        public static void BuildCoordinates(List<Person> people)
+        public static void BuildPoints(List<Person> people)
         {
             for (int i = 0; i < people.Count; i++)
             {
