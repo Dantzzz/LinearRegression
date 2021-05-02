@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LinearRegression
 {
@@ -66,12 +64,12 @@ namespace LinearRegression
             int sumOfAllX = SumOfAllX(Coordinate.points);
             int sumOfAllY = SumOfAllY(Coordinate.points);
             double sumOfAllXSquared = SumOfAllXSquared(Coordinate.points);
-            
+
 
             double numerator = (sumOfAllY * sumOfAllXSquared) - (sumOfAllX * sumOfAllXY);
             double denominator = (numberOfPoints * sumOfAllXSquared) - Math.Pow(sumOfAllX, 2);
             double alpha = numerator / denominator;
-            
+
             return alpha;
         }
 
@@ -87,12 +85,15 @@ namespace LinearRegression
             double denominator = (numberOfPoints * sumOfAllXSquared) - Math.Pow(sumOfAllX, 2);
             double beta = numerator / denominator;
             return beta;
+        }
 
-            
-            
-            //Console.WriteLine($"The formula is: {}.");
+        public Calculation(List<Coordinate> coordinates)
+        {
+            int totalPoints = GetNumberOfPoints(Coordinate.points);
+            double sumOfAllXY = SumOfAllXY(Coordinate.points);
+            int sumOfAllX = SumOfAllX(Coordinate.points);
+            int sumOfAllY = SumOfAllY(Coordinate.points);
+            double sumOfAllXSquared = SumOfAllXSquared(Coordinate.points);
         }
     }
 }
-
-//TODO: Calculate 
