@@ -16,12 +16,15 @@ namespace LinearRegression
             Console.WriteLine($"The value of beta is: {beta}.");
             Console.WriteLine($"The formula is: y = {alpha} + {beta} * x");
 
-            Test(Calculation.CalculateAlpha());
-            Test(Calculation.CalculateBeta());
+            // Linear Regression
+            double prediction = Regression.Predict(alpha, beta, Coordinate.points);
+            Console.WriteLine(prediction);
+            //Test(Calculation.CalculateAlpha());
+            //Test(Calculation.CalculateBeta());
         }
         public static void Test(double val)
         {
-            Console.WriteLine();
+            Console.WriteLine(val);
         }
     }
 }
