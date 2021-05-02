@@ -58,25 +58,38 @@ namespace LinearRegression
             return sum;
         }
 
-        public static void CalculateAlpha()
+        public static double CalculateAlpha()
         {
-            double alpha = 0;
-            int numberOfPoints = Calculation.GetNumberOfPoints(Coordinate.points);
-            double sumOfAllXY = Calculation.SumOfAllXY(Coordinate.points);
-            int sumOfAllX = Calculation.SumOfAllX(Coordinate.points);
-            int sumOfAllY = Calculation.SumOfAllY(Coordinate.points);
-            double sumOfAllXSquared = Calculation.SumOfAllXSquared(Coordinate.points);
+            //TODO: Make a Calculation object that contains all these variables as fields
+            int numberOfPoints = GetNumberOfPoints(Coordinate.points);
+            double sumOfAllXY = SumOfAllXY(Coordinate.points);
+            int sumOfAllX = SumOfAllX(Coordinate.points);
+            int sumOfAllY = SumOfAllY(Coordinate.points);
+            double sumOfAllXSquared = SumOfAllXSquared(Coordinate.points);
+            
 
+            double numerator = (sumOfAllY * sumOfAllXSquared) - (sumOfAllX * sumOfAllXY);
+            double denominator = (numberOfPoints * sumOfAllXSquared) - Math.Pow(sumOfAllX, 2);
+            double alpha = numerator / denominator;
+            
+            return alpha;
         }
 
-        public static void CalcBeta()
+        public static double CalculateBeta()
         {
-            double beta;
+            int numberOfPoints = GetNumberOfPoints(Coordinate.points);
+            double sumOfAllXY = SumOfAllXY(Coordinate.points);
+            int sumOfAllX = SumOfAllX(Coordinate.points);
+            int sumOfAllY = SumOfAllY(Coordinate.points);
+            double sumOfAllXSquared = SumOfAllXSquared(Coordinate.points);
 
-            //TODO: 
+            double numerator = (numberOfPoints * sumOfAllXY) - (sumOfAllX * sumOfAllY);
+            double denominator = (numberOfPoints * sumOfAllXSquared) - Math.Pow(sumOfAllX, 2);
+            double beta = numerator / denominator;
+            return beta;
 
-            //Console.WriteLine($"The value of alphas is: {}.");
-            //Console.WriteLine($"The value of beta is: {}.");
+            
+            
             //Console.WriteLine($"The formula is: {}.");
         }
     }

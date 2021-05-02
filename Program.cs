@@ -9,15 +9,13 @@ namespace LinearRegression
             Person.PopulateList();
             Coordinate.BuildPoints(Person.people);
 
-            int numberOfPoints = Calculation.GetNumberOfPoints(Coordinate.points);
-            double sumOfAllXY = Calculation.SumOfAllXY(Coordinate.points);
-            int sumOfAllX = Calculation.SumOfAllX(Coordinate.points);
-            int sumOfAllY = Calculation.SumOfAllY(Coordinate.points);
-            double sumOfAllXSquared = Calculation.SumOfAllXSquared(Coordinate.points);
+            double alpha = Calculation.CalculateAlpha();
+            double beta = Calculation.CalculateBeta();
+            Console.WriteLine($"The value of alpha is: {alpha}.");
+            Console.WriteLine($"The value of beta is: {beta}.");
+            Console.WriteLine($"The formula is: y = {alpha} + {beta} * x");
 
 
-
-            Test(numberOfPoints);
         }
         public static void Test(int val)
         {
